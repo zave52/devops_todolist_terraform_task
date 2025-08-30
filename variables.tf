@@ -63,9 +63,9 @@ variable "ssh_key_public" {
   type        = string
 }
 
-variable "dns_label" {
+variable "dns_label_prefix" {
   description = "The DNS label prefix for the public IP address"
-  default     = "matetask13579"
+  default     = "matetask"
   type        = string
 }
 

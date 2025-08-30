@@ -4,6 +4,10 @@ terraform {
       source  = "hashicorp/azurerm"
       version = "4.42.0"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.1"
+    }
   }
 }
 
@@ -22,6 +26,11 @@ resource "azurerm_storage_container" "storage_container_for_backend" {
   name                  = "tfstate"
   storage_account_id    = module.storage.storage_account_id
   container_access_type = "private"
+}
+
+resource "random_integer" "random-int" {
+  min = 100
+  max = 999
 }
 
 module "storage" {
@@ -47,7 +56,7 @@ module "network" {
   network_security_group_name = var.network_security_group_name
   public_ip_address_name      = var.public_ip_address_name
   public_ip_allocation_method = "Static"
-  dns_label                   = var.dns_label
+  dns_label                   = "${var.dns_label_prefix}${random_integer.random-int.result}"
   public_ip_sku               = "Standard"
 }
 
