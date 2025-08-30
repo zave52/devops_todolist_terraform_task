@@ -50,5 +50,5 @@ variable "computer_name" {
 
 variable "network_security_group_id" {
   description = "The ID of the network security group to associate with the VM"
-  type = string
+  type        = string
 }
