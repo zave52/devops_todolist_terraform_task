@@ -13,6 +13,16 @@ output "vm_private_ip" {
   value       = azurerm_network_interface.nic.private_ip_address
 }
 
+output "public_ip_address" {
+  description = "The public IP address of the virtual machine"
+  value       = var.public_ip_address
+}
+
+output "public_ip_fqdn" {
+  description = "The fully qualified domain name of the public IP"
+  value       = var.public_ip_fqdn
+}
+
 output "network_interface_id" {
   description = "The ID of the network interface"
   value       = azurerm_network_interface.nic.id

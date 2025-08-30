@@ -47,3 +47,13 @@ variable "network_security_group_id" {
   description = "The ID of the network security group to associate with the VM"
   type        = string
 }
+
+variable "public_ip_address" {
+  description = "The public IP address of the virtual machine"
+  type        = string
+}
+
+variable "public_ip_fqdn" {
+  description = "The fully qualified domain name of the public IP"
+  type        = string
+}

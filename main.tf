@@ -73,4 +73,6 @@ module "compute" {
   admin_username            = var.admin_username
   computer_name             = var.computer_name
   network_security_group_id = module.network.network_security_group_id
+  public_ip_address         = module.network.public_ip_address
+  public_ip_fqdn            = module.network.public_ip_fqdn
 }
