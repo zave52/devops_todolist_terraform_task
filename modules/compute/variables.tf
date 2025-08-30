@@ -38,11 +38,6 @@ variable "admin_username" {
   type        = string
 }
 
-variable "admin_password" {
-  description = "The administrator password for the virtual machine"
-  type        = string
-}
-
 variable "computer_name" {
   description = "The computer name/hostname for the virtual machine"
   type        = string

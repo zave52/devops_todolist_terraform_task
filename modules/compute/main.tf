@@ -42,11 +42,10 @@ resource "azurerm_virtual_machine" "vm" {
   os_profile {
     computer_name  = var.computer_name
     admin_username = var.admin_username
-    admin_password = var.admin_password
   }
 
   os_profile_linux_config {
-    disable_password_authentication = false
+    disable_password_authentication = true
 
     ssh_keys {
       key_data = var.ssh_key_public

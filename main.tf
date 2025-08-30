@@ -71,7 +71,6 @@ module "compute" {
   subnet_id                 = module.network.subnet_id
   public_ip_address_id      = module.network.public_ip_address_id
   admin_username            = var.admin_username
-  admin_password            = var.admin_password
   computer_name             = var.computer_name
   network_security_group_id = module.network.network_security_group_id
 }
