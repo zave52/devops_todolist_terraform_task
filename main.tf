@@ -55,9 +55,9 @@ module "network" {
   subnet_address_prefix       = var.subnet_address_prefix
   network_security_group_name = var.network_security_group_name
   public_ip_address_name      = var.public_ip_address_name
-  public_ip_allocation_method = "Static"
+  public_ip_allocation_method = "Dynamic"
   dns_label                   = "${var.dns_label_prefix}${random_integer.random-int.result}"
-  public_ip_sku               = "Standard"
+  public_ip_sku               = "Basic"
 }
 
 module "compute" {
